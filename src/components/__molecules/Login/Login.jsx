@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Loginschema } from "../../__atoms/loginSchema/loginSchema";
+import movie from "../../../assets/images/Movie.png";
 function Login({ setLoginVisible, setSignUpVisible }) {
   const {
     register,
@@ -26,9 +27,10 @@ function Login({ setLoginVisible, setSignUpVisible }) {
   };
   return (
     <>
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="w-[400px] bg-[#161D2F] h-[373px] rounded-[20px] p-6">
-          <h1 className="text-white font-[outfit] text-2xl font-normal leading-none tracking-[-0.5px]">
+      <div className="flex justify-evenly items-center min-h-screen flex-col">
+        <img src={movie} alt="" />
+        <div className="max-w-[400px] w-full bg-[#161D2F] h-[373px] rounded-[20px] p-6">
+          <h1 className="text-white font-[outfit] text-2xl  leading-none tracking-[-0.5px]">
             Login
           </h1>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
@@ -69,18 +71,20 @@ function Login({ setLoginVisible, setSignUpVisible }) {
               Login to your account
             </button>
           </form>
-          <p className="!ml-[60px] !mt-[24px] text-white font-[outfit] text-[15px] font-normal leading-normal">
-            Don’t have an account?
-            <span
-              onClick={() => {
-                setLoginVisible(false);
-                setSignUpVisible(true);
-              }}
-              className="!ml-[9px] cursor-pointer text-[#FC4747] font-outfit text-[15px] font-normal leading-normal"
-            >
-              Sign Up
-            </span>
-          </p>
+          <div className="flex justify-center">
+            <p className=" !mt-[24px] text-white font-[outfit] text-[15px] font-normal leading-normal">
+              Don’t have an account?
+              <span
+                onClick={() => {
+                  setLoginVisible(false);
+                  setSignUpVisible(true);
+                }}
+                className="!ml-[9px] cursor-pointer text-[#FC4747] font-outfit text-[15px] font-normal leading-normal"
+              >
+                Sign Up
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </>

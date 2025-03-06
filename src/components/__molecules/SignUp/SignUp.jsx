@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SignUpSchema } from "../../__atoms/SignUpSchema/SighUpSchema";
+import movie from "../../../assets/images/Movie.png";
+
 function SignUp({ setLoginVisible, setSignUpVisible }) {
   const {
     register,
@@ -20,8 +22,10 @@ function SignUp({ setLoginVisible, setSignUpVisible }) {
 
   return (
     <>
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="w-[400px] bg-[#161D2F] h-[418px] rounded-[20px] p-6">
+      <div className="flex justify-evenly items-center flex-col min-h-screen">
+        <img src={movie} alt="" />
+
+        <div className="max-w-[400px] w-full bg-[#161D2F] h-[418px] rounded-[20px] p-6">
           <h1 className="text-white font-[outfit] text-2xl font-normal leading-none tracking-[-0.5px]">
             Sign Up
           </h1>
