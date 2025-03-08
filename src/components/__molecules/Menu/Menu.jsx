@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import Movie from "../../../assets/images/Movie.png";
-import tv from "../../../assets/images/icon-nav-tv-series.svg";
-import movie from "../../../assets/images/icon-nav-movies.svg";
-import bookmark from "../../../assets/images/icon-nav-bookmark.svg";
-import home from "../../../assets/images/icon-nav-home.svg";
 import avatar from "../../../assets/images/image-avatar.png";
 import HomeIcon from "../../__atoms/HomeIcon/HomeIcon";
 import TvSeriesIcon from "../../__atoms/TvSeriesIcon/TvSeriesIcon";
 import MoviesIcon from "../../__atoms/MoviesIcon/MoviesIcon";
+import FavIcon from "../../__atoms/FavIcon/FavIcon";
 function Menu({ setShow }) {
   const [whiteicon, setWhiteIcon] = useState("home");
   return (
@@ -31,10 +28,10 @@ function Menu({ setShow }) {
             whiteicon={whiteicon}
             setWhiteIcon={setWhiteIcon}
           />
-          <img
-            src={bookmark}
-            alt=""
-            className=" cursor-pointer w-[20px] h-[20px] "
+          <FavIcon
+            setShow={setShow}
+            whiteicon={whiteicon}
+            setWhiteIcon={setWhiteIcon}
           />
         </div>
         <img src={avatar} className="w-[40px] h-[40px] !mt-[552px]" alt="" />
