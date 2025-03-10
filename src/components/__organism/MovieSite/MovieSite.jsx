@@ -38,7 +38,7 @@ function MovieSite() {
         />
       )}
       {!loginVisible && !signUpVisible && (
-        <div className="flex">
+        <div className="mmd:flex inline">
           <Menu setShow={setShow} />
           <div>
             <Search setSearchQuery={setSearchQuery} />

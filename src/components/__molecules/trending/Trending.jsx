@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import ImageHover from "../ImgHover/ImgHover";
 import empty from "../../../assets/images/empty.svg";
 import filled from "../../../assets/images/filled.svg";
+import "swiper/swiper-bundle.css";
 
 import TrendingMovieInfo from "../ReccomendedMovieInfo/ReccomendedMovieInfo";
 
@@ -27,33 +28,18 @@ function Trending({ data, favorites, setFavorites }) {
 
   return (
     <>
-      <h1 className="!ml-[36px] !mt-[35px] text-white font-[outfit] text-[32px] font-normal leading-none tracking-[-0.5px]">
+      <h1 className="mmd:!ml-[36px] !mt-[35px] text-white font-[outfit] text-[32px] font-normal leading-none tracking-[-0.5px]">
         Trending
       </h1>
-      <div
-        style={{ width: "calc(100vw - 200px)", height: "auto" }}
-        className="!ml-[36px] !mt-[25px]"
-      >
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={2.5}
-          className="mySwiper"
-          breakpoints={{
-            640: {
-              slidesPerView: 1.5,
-            },
-            1024: {
-              slidesPerView: 2.5,
-            },
-          }}
-        >
+      <div className="mmd:!ml-[36px] !mt-[25px] w-[90vw]  mmd:w-[calc(100vw-200px)] h-auto">
+        <Swiper spaceBetween={10} slidesPerView={2.5} className="mySwiper">
           {data.map(
             (movie) =>
               movie.isTrending && (
                 <SwiperSlide key={movie.title}>
-                  <div className="relative group w-[470px]">
+                  <div className="relative group max-w-[470px] w-full">
                     <img
-                      className="w-[470px] h-[230px] object-cover rounded-[8px] cursor-pointer"
+                      className="max-w-[470px] w-full h-[230px] object-cover rounded-[8px] cursor-pointer"
                       src={movie.thumbnail.regular.large}
                       alt={movie.title}
                     />
@@ -65,7 +51,7 @@ function Trending({ data, favorites, setFavorites }) {
                           ? filled
                           : empty
                       }
-                      className="absolute left-[414px] top-[16px] cursor-pointer z-10"
+                      className="absolute left-[85%] top-[16px] cursor-pointer z-10"
                       alt="favorite"
                       onClick={() => addToFav(movie)}
                     />

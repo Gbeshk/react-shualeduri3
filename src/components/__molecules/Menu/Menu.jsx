@@ -9,10 +9,13 @@ function Menu({ setShow }) {
   const [whiteicon, setWhiteIcon] = useState("home");
   return (
     <>
-      <div className="w-[96px] h-[960px] flex flex-col items-center flex-shrink-0 rounded-[20px] bg-[#161D2F]">
-        <img src={Movie} alt="" className="w-[35px] h-[26px] !mt-[36px] " />
+      <div
+        className="mmd:w-[96px] mmd:h-[960px] px-[24px] mmd:justify-baseline justify-between flex mmd:flex-col flex-row items-center flex-shrink-0 rounded-[20px] bg-[#161D2F] 
+               max-w-[720px] h-[50px]"
+      >
+        <img src={Movie} alt="" className="w-[35px] h-[26px] mmd:!mt-[36px] " />
 
-        <div className="gap-[40px] flex flex-col !mt-[75px]">
+        <div className="mmd:gap-[40px] gap-[30px] flex mmd:flex-col flex-row mmd:!mt-[75px]">
           <HomeIcon
             setShow={setShow}
             whiteicon={whiteicon}
@@ -34,7 +37,11 @@ function Menu({ setShow }) {
             setWhiteIcon={setWhiteIcon}
           />
         </div>
-        <img src={avatar} className="w-[40px] h-[40px] !mt-[552px]" alt="" />
+        <img
+          src={avatar}
+          className="w-[40px] h-[40px] mmd:!mb-[24px] mmd:!mt-[552px]"
+          alt=""
+        />
       </div>
     </>
   );

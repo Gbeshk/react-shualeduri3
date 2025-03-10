@@ -7,3 +7,11 @@ body {
   background-color: #10141e;
   padding: 30px;
 }
+@theme {
+  --breakpoint-mmd: 900px;
+}
+@media (max-width: 800px) {
+  .slider {
+    width: 2000px;
+  }
+}

@@ -32,41 +32,43 @@ function Recommended({ favorites, setFavorites, filteredData, searchQuery }) {
 
   return (
     <>
-      <h1 className="!ml-[36px]  !mt-[40px] text-white font-[outfit] text-[32px] font-normal leading-none tracking-[-0.5px]">
+      <h1 className="mmd:!ml-[36px]  !mt-[40px] text-white font-[outfit] text-[32px] font-normal leading-none tracking-[-0.5px]">
         {filteredData.length === 29
           ? "Recommended for you"
           : `Found ${x} results for '${searchQuery}'`}
       </h1>
-      <div className="!ml-[36px] flex flex-wrap gap-[40px] !mt-[32px]">
-        {filteredData
-          .filter((movie) =>
-            movie.title.toLowerCase().includes(searchQuery.toLowerCase())
-          )
-          .map((movie, key) => {
-            const isFilled = favorites.some(
-              (favMovie) => favMovie.title === movie.title
-            );
+      <div className="flex items-center justify-center">
+        <div className="mmd:!ml-[36px] flex flex-wrap gap-[40px] !mt-[32px]">
+          {filteredData
+            .filter((movie) =>
+              movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            .map((movie, key) => {
+              const isFilled = favorites.some(
+                (favMovie) => favMovie.title === movie.title
+              );
 
-            return (
-              <div key={key}>
-                <div className="relative group">
-                  <img
-                    className="w-[280px] h-[174px] object-fill rounded-[8px] cursor-pointer"
-                    src={movie.thumbnail.regular.medium}
-                    alt={movie.title}
-                  />
-                  <ImageHover />
-                  <img
-                    src={isFilled ? filled : empty}
-                    className="absolute left-[232px] top-[16px] cursor-pointer"
-                    alt=""
-                    onClick={() => addToFav(movie)}
-                  />
+              return (
+                <div key={key}>
+                  <div className="relative group">
+                    <img
+                      className="mmd:w-[220px]  sm:w-[280px] w-[164px] mmd sm:h-[174px] mmd:h-[140px] h-[110px] object-fill rounded-[8px] cursor-pointer"
+                      src={movie.thumbnail.regular.medium}
+                      alt={movie.title}
+                    />
+                    <ImageHover />
+                    <img
+                      src={isFilled ? filled : empty}
+                      className="absolute left-[80%] top-[16px] cursor-pointer"
+                      alt=""
+                      onClick={() => addToFav(movie)}
+                    />
+                  </div>
+                  <MovieInfo movie={movie} />
                 </div>
-                <MovieInfo movie={movie} />
-              </div>
-            );
-          })}
+              );
+            })}
+        </div>
       </div>
     </>
   );

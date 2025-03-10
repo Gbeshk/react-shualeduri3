@@ -55,14 +55,14 @@ function Favorites({ favorites, setFavorites, searchQuery }) {
               <div key={key}>
                 <div className="relative group">
                   <img
-                    className="w-[280px] h-[174px] object-fill rounded-[8px] cursor-pointer"
+                    className="mmd:w-[220px]  sm:w-[280px] w-[164px] mmd sm:h-[174px] mmd:h-[140px]  object-fill rounded-[8px] cursor-pointer"
                     src={movie.thumbnail.regular.medium}
                     alt={movie.title}
                   />
                   <ImageHover />
                   <img
                     src={filled}
-                    className="absolute left-[232px] top-[16px] cursor-pointer"
+                    className="absolute left-[75%] sm:left-[80%] top-[16px] cursor-pointer"
                     alt=""
                     onClick={() => addToFav(movie)}
                   />
@@ -83,14 +83,14 @@ function Favorites({ favorites, setFavorites, searchQuery }) {
               <div key={key}>
                 <div className="relative group">
                   <img
-                    className="w-[280px] h-[174px] object-fill rounded-[8px] cursor-pointer"
+                    className="mmd:w-[220px]  sm:w-[280px] w-[164px] mmd sm:h-[174px] mmd:h-[140px]  object-fill rounded-[8px] cursor-pointer"
                     src={movie.thumbnail.regular.medium}
                     alt={movie.title}
                   />
                   <ImageHover />
                   <img
                     src={filled}
-                    className="absolute left-[232px] top-[16px] cursor-pointer"
+                    className="absolute left-[75%] sm:left-[80%] top-[16px] cursor-pointer"
                     alt=""
                     onClick={() => addToFav(movie)}
                   />
